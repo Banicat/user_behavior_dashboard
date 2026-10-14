@@ -119,7 +119,7 @@ SELECT s.주시작일,
 
 @st.cache_data
 def load_data(uploaded_bytes):
-    data = query(SQL_WEEKLY_FUNNEL, uploaded_bytes)  # edited
+    data = query(SQL_WEEKLY_FUNNEL, uploaded_bytes)
     data["주시작일"] = pd.to_datetime(data["주시작일"]).dt.date
     return data
 
